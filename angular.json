@@ -120,5 +120,8 @@
         }
       }
     }},
-  "defaultProject": "MusicBudzFront"
+  "defaultProject": "MusicBudzFront",
+  "cli": {
+    "analytics": false
+  }
 }
