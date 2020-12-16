@@ -2,3 +2,58 @@
   margin: 0;
   padding: 0;
 }
+
+html, body {
+  height: 100%;
+}
+
+app-root {
+  display: inline-block;
+  
+  height: 100%;
+  width: 100%;
+}
+
+/** Link styling **/
+a.no_underline {
+  text-decoration: none;
+}
+
+/** Fonts **/
+@font-face {
+  font-family: "Hattori-Hanzo";
+  src: url("assets/fonts/Hattori-Hanzo/Hattori_Hanzo.otf");
+}
+
+/** Global form styles **/
+
+.sleek_form_lg .input_text_wrapper {
+  margin-bottom: 8px;
+
+  border: 1px;
+  border-color: #999999;
+  border-style: solid;
+  border-radius: 15px;
+
+  padding: 16px;
+}
+
+.sleek_form_lg .input_text_wrapper > input[type=text], input[type=password] {
+  border-style: hidden;
+  filter: none;
+
+  font-family: "Hattori-Hanzo", sans-serif;
+  font-size: 2em;
+}
+
+.sleek_form_lg button[type=submit] {
+  border: 1px;
+  border-color: #999999;
+  border-style: solid;
+  border-radius: 10px;
+
+  padding: 10px;
+
+  font-family: "Hattori-Hanzo", sans-serif;
+  font-size: 2em;
+}

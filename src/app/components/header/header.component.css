@@ -1,0 +1,41 @@
+#header_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 10px;
+}
+
+#header_music_budz_logo {
+  margin-left: 10px;
+
+  overflow: visible;
+}
+
+#header_search_bar {
+  display: flex;
+
+  height: 24px;
+
+  border: 3px;
+  border-style: solid;
+  border-radius: 20px;
+
+  padding: 8px;
+}
+
+#header_search_icon {
+  max-height: 100%;
+  margin-right: 8px;
+}
+
+#header_search_input {
+  width: 200px;
+  border-style: hidden;
+}
+
+#header_profile {
+  margin-right: 20px;
+  
+  font-family: "Hattori-Hanzo", sans-serif;
+}

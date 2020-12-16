@@ -1,0 +1,11 @@
+#footer_links {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+#footer_links > ul {
+  list-style: none;
+
+  font-family: "Hattori-Hanzo", sans-serif;
+}
