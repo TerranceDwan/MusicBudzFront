@@ -6,15 +6,21 @@
 <div id="login_form_container">
   <form action="/" method="post" class="sleek_form_lg">
     <div class="input_text_wrapper">
-      <input type="text" name="" id="" placeholder="Username" />
+      <input type="text" name="username" id="login_username" placeholder="Username" />
+    </div>
+    <div class="input_text_wrapper" [@openCloseInputText]="isInLoginState ? 'login' : 'signup'">
+      <input type="email" name="email" id="login_email" placeholder="Email" />
     </div>
     <div class="input_text_wrapper">
-      <input type="password" name="" id="" placeholder="Password" />
+      <input type="password" name="password" id="login_password" placeholder="Password" />
     </div>
-    <button type="submit">Login</button>
+    <div class="input_text_wrapper" [@openCloseInputText]="isInLoginState ? 'login' : 'signup'">
+      <input type="password" name="password_confirm" id="login_password_confirm" placeholder="Confirm Password" />
+    </div>
+    <button type="submit">{{isInLoginState ? 'Login' : 'Sign Up'}}</button>
   </form>
   <div id="login_form_new_acct_prompt">
-    Don't have an account?<br />
-    <a href="" class="no_underline">Create a New Profile!</a>
+    {{isInLoginState ? 'Don\'t have an account?' : 'Already have an account?'}}<br />
+    <a role="button" (click)="toggleFormState()" class="no_underline">{{isInLoginState ? 'Create a New Profile!' : 'Log In!' }}</a>
   </div>
 </div>

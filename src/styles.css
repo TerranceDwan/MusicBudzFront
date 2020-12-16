@@ -17,6 +17,9 @@ app-root {
 /** Link styling **/
 a.no_underline {
   text-decoration: none;
+  color: #b129b6;
+
+  cursor: pointer;
 }
 
 /** Fonts **/
@@ -38,7 +41,7 @@ a.no_underline {
   padding: 16px;
 }
 
-.sleek_form_lg .input_text_wrapper > input[type=text], input[type=password] {
+.sleek_form_lg .input_text_wrapper > input[type=text], input[type=password], input[type=email] {
   border-style: hidden;
   filter: none;
 
@@ -46,7 +49,7 @@ a.no_underline {
   font-size: 2em;
 }
 
-.sleek_form_lg .input_text_wrapper > input[type=text]:focus, input[type=password]:focus {
+.sleek_form_lg .input_text_wrapper > input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
   outline: none;
 }
 
@@ -60,4 +63,10 @@ a.no_underline {
 
   font-family: "Hattori-Hanzo", sans-serif;
   font-size: 2em;
+
+  cursor: pointer;
+}
+
+.sleek_form_lg button[type=submit]:hover {
+  background-color: #DDDDDD;
 }
