@@ -1,9 +1,7 @@
-<div id="modal_container" *ngIf="activeModal">
-  <div class="modal_wrapper" [ngClass]="activeModal.isSuccess ? 'modal_success' : 'modal_failure'">
-    <img src="" alt="Icon" />
+<div id="modal_container" [@openCloseModal]="activeModal ? 'open' : 'closed'">
+  <div class="modal_wrapper" *ngIf="activeModal" [ngClass]="activeModal.isSuccess ? 'modal_success' : 'modal_failure'">
+    <img [src]="activeModal.isSuccess ? thumbsUpURL : thumbsDownURL" alt="Icon" />
     <p class="modal_message">{{activeModal.message}}</p>
-    <a role="button" (click)="closeModal()">
-      <img src="" alt="close">
-    </a>
+    <img class="modal_close_icon" [src]="crossURL" alt="close" (click)="closeModal()" />
   </div>
 </div>

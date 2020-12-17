@@ -1,7 +1,26 @@
 #modal_container {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 24px;
+
+  border-radius: 15px;
+
+  padding: 15px;
+
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+.modal_wrapper img {
+  max-height: 100%;
 }
 
 .modal_success {
@@ -13,5 +32,13 @@
 }
 
 .modal_message {
+  margin-left: 15px;
+  margin-right: 15px;
+
   font-family: "Hattori-Hanzo", sans-serif;
+  font-size: 1.5em;
+}
+
+.modal_close_icon {
+  cursor: pointer;
 }

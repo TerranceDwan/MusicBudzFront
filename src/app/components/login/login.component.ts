@@ -74,12 +74,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(formData: any): void {
-    console.log("Login");
     this.activeModal = new ResponseModal(false, Math.random() * 5 + "");
   }
 
   signUp(formData: any): void {
-    console.log("Signup");
     this.activeModal = new ResponseModal(true, Math.random() * 5 + "");
   }
 }
