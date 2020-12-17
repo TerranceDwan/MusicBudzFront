@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+app-root {
+  display: inline-block;
+  
+  height: 100%;
+  width: 100%;
+}
+
+/** Link styling **/
+a.no_underline {
+  text-decoration: none;
+  color: #b129b6;
+
+  cursor: pointer;
+}
+
+/** Fonts **/
+@font-face {
+  font-family: "Hattori-Hanzo";
+  src: url("assets/fonts/Hattori-Hanzo/Hattori_Hanzo.otf");
+}
+
+/** Global form styles **/
+
+.sleek_form_lg .input_text_wrapper {
+  margin-bottom: 8px;
+
+  border: 1px;
+  border-color: #999999;
+  border-style: solid;
+  border-radius: 15px;
+
+  padding: 16px;
+}
+
+.sleek_form_lg .input_text_wrapper > input[type=text], input[type=password], input[type=email] {
+  border-style: hidden;
+  filter: none;
+
+  font-family: "Hattori-Hanzo", sans-serif;
+  font-size: 2em;
+}
+
+.sleek_form_lg .input_text_wrapper > input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+  outline: none;
+}
+
+.sleek_form_lg button[type=submit] {
+  border: 1px;
+  border-color: #999999;
+  border-style: solid;
+  border-radius: 10px;
+
+  padding: 10px;
+
+  font-family: "Hattori-Hanzo", sans-serif;
+  font-size: 2em;
+
+  cursor: pointer;
+}
+
+.sleek_form_lg button[type=submit]:hover {
+  background-color: #DDDDDD;
+}

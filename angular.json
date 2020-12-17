@@ -119,8 +119,7 @@
           }
         }
       }
-    }
-  },
+    }},
   "defaultProject": "MusicBudzFront",
   "cli": {
     "analytics": false

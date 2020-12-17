@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+#sticky_footer_enable {
+  flex: 1 0 auto;
+}
+
+#login_footer {
+  flex-shrink: 0;
+}
