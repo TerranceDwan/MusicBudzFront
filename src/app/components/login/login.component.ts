@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -37,8 +38,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   isInLoginState: boolean;
+  loginFormGroup: FormGroup;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private formBuilder: FormBuilder) { 
+    this.loginFormGroup = this.formBuilder.group({
+      username: '',
+      email: '',
+      password: '',
+      password_confirm: ''
+    });
+  }
 
   ngOnInit(): void {
     if(this.router.url.includes("login")) {
@@ -50,5 +59,21 @@ export class LoginComponent implements OnInit {
 
   toggleFormState(): void {
     this.isInLoginState = !this.isInLoginState;
+  }
+
+  formSubmit(formData: any): void {
+    if(this.isInLoginState) {
+      this.login(formData);
+    } else {
+      this.signUp(formData);
+    }
+  }
+
+  login(formData: any): void {
+    console.log("Login");
+  }
+
+  signUp(formData: any): void {
+    console.log("Signup");
   }
 }

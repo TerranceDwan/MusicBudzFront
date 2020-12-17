@@ -4,18 +4,18 @@
   <h1>Broadcast your beats.</h1>
 </div>
 <div id="login_form_container">
-  <form action="/" method="post" class="sleek_form_lg">
+  <form class="sleek_form_lg" [formGroup]="loginFormGroup" (ngSubmit)="formSubmit(loginFormGroup.value)">
     <div class="input_text_wrapper">
-      <input type="text" name="username" id="login_username" placeholder="Username" />
+      <input type="text" name="username" id="login_username" placeholder="Username" required />
     </div>
     <div class="input_text_wrapper" [@openCloseInputText]="isInLoginState ? 'login' : 'signup'">
-      <input type="email" name="email" id="login_email" placeholder="Email" />
+      <input type="email" name="email" id="login_email" placeholder="Email" [required]="!isInLoginState" />
     </div>
     <div class="input_text_wrapper">
-      <input type="password" name="password" id="login_password" placeholder="Password" />
+      <input type="password" name="password" id="login_password" placeholder="Password" required />
     </div>
     <div class="input_text_wrapper" [@openCloseInputText]="isInLoginState ? 'login' : 'signup'">
-      <input type="password" name="password_confirm" id="login_password_confirm" placeholder="Confirm Password" />
+      <input type="password" name="password_confirm" id="login_password_confirm" placeholder="Confirm Password" [required]="!isInLoginState" />
     </div>
     <button type="submit">{{isInLoginState ? 'Login' : 'Sign Up'}}</button>
   </form>
