@@ -1,7 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, SelectControlValueAccessor } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ResponseModal } from 'src/app/utility/response-modal';
 
 @Component({
   selector: 'app-login',
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
 
   isInLoginState: boolean;
   loginFormGroup: FormGroup;
+  activeModal: ResponseModal;
 
   constructor(private router: Router, private formBuilder: FormBuilder) { 
     this.loginFormGroup = this.formBuilder.group({
@@ -55,6 +57,8 @@ export class LoginComponent implements OnInit {
     } else {
       this.isInLoginState = false;
     }
+
+    this.activeModal = null;
   }
 
   toggleFormState(): void {
@@ -71,9 +75,11 @@ export class LoginComponent implements OnInit {
 
   login(formData: any): void {
     console.log("Login");
+    this.activeModal = new ResponseModal(false, Math.random() * 5 + "");
   }
 
   signUp(formData: any): void {
     console.log("Signup");
+    this.activeModal = new ResponseModal(true, Math.random() * 5 + "");
   }
 }

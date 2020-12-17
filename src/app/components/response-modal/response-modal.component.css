@@ -1,0 +1,17 @@
+#modal_container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+}
+
+.modal_success {
+  background-color: #00FF00;
+}
+
+.modal_failure {
+  background-color: #FF0000;
+}
+
+.modal_message {
+  font-family: "Hattori-Hanzo", sans-serif;
+}
