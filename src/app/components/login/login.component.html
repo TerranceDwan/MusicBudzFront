@@ -5,18 +5,18 @@
   <h1>Broadcast your beats.</h1>
 </div>
 <div id="login_form_container">
-  <form class="sleek_form_lg" [formGroup]="loginFormGroup" (ngSubmit)="formSubmit(loginFormGroup.value)">
+  <form action="" class="sleek_form_lg" [formGroup]="loginFormGroup" (ngSubmit)="formSubmit(loginFormGroup.value)">
     <div class="input_text_wrapper">
-      <input type="text" name="username" id="login_username" placeholder="Username" required />
+      <input type="text" name="username" formControlName="username" id="login_username" placeholder="Username" required autocomplete="username" />
     </div>
     <div class="input_text_wrapper" [@openCloseInputText]="isInLoginState ? 'login' : 'signup'">
-      <input type="email" name="email" id="login_email" placeholder="Email" [required]="!isInLoginState" />
+      <input type="email" name="email" formControlName="email" id="login_email" placeholder="Email" [required]="!isInLoginState" autocomplete="off"/>
     </div>
     <div class="input_text_wrapper">
-      <input type="password" name="password" id="login_password" placeholder="Password" required />
+      <input type="password" name="password" formControlName="password" id="login_password" placeholder="Password" required autocomplete="current-password" />
     </div>
     <div class="input_text_wrapper" [@openCloseInputText]="isInLoginState ? 'login' : 'signup'">
-      <input type="password" name="password_confirm" id="login_password_confirm" placeholder="Confirm Password" [required]="!isInLoginState" />
+      <input type="password" name="password_confirm" formControlName="password_confirm" id="login_password_confirm" placeholder="Confirm Password" [required]="!isInLoginState" />
     </div>
     <button type="submit">{{isInLoginState ? 'Login' : 'Sign Up'}}</button>
   </form>

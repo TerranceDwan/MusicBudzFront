@@ -17,6 +17,7 @@ import { ResponseModal } from 'src/app/utility/response-modal';
         'padding-bottom': '0px',
         'border-top-width': '0px',
         'border-bottom-width': '0px',
+        'border-color': 'white',
         overflow: 'hidden'
       })),
       state('signup', style({
@@ -26,11 +27,12 @@ import { ResponseModal } from 'src/app/utility/response-modal';
         'padding-bottom': '*',
         'border-top-width': '*',
         'border-bottom-width': '*',
+        'border-color': '#999999'
       })),
       transition('login => signup', [
         animate('0.5s ease')
       ]),
-      transition("signup => login", [
+      transition('signup => login', [
         animate('0.5s ease')
       ])
     ])
@@ -74,10 +76,32 @@ export class LoginComponent implements OnInit {
   }
 
   login(formData: any): void {
-    this.activeModal = new ResponseModal(false, Math.random() * 5 + "");
+    if(formData.username == '' && formData.password == '') {
+      this.activeModal = new ResponseModal(false, "Please enter your username and password.");
+    } else if(formData.username == '') {
+      this.activeModal = new ResponseModal(false, "Please enter your username.");
+    } else if(formData.password == '') {
+      this.activeModal = new ResponseModal(false, "Please enter your password.");
+    } else {
+      // TODO fill once services are implemented.
+      this.activeModal = new ResponseModal(true, "Success (so far).");
+    } 
   }
 
   signUp(formData: any): void {
-    this.activeModal = new ResponseModal(true, Math.random() * 5 + "");
+    if(formData.username == '') {
+      this.activeModal = new ResponseModal(false, "Please enter your requested username.");
+    } else if(formData.email == '') {
+      this.activeModal = new ResponseModal(false, "Please enter your requested email address.");
+    } else if(formData.password == '') {
+      this.activeModal = new ResponseModal(false, "Please enter your requested password.");
+    } else if(formData.password_confirm == '') {
+      this.activeModal = new ResponseModal(false, "Please confirm your requested password.");
+    } else if(formData.password != formData.password_confirm) {
+      this.activeModal = new ResponseModal(false, "Your passwords do not match.");
+    } else {
+      // TODO fill once services are implemented.
+      this.activeModal = new ResponseModal(true, "Success (so far).");
+    }
   }
 }

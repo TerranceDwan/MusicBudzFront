@@ -16,9 +16,6 @@ import { ResponseModal } from 'src/app/utility/response-modal';
         opacity: 0,
         top: -50
       })),
-      transition('open => closed', [
-        animate('0.1s')
-      ]),
       transition('closed => open', [
         animate('0.5s ease')
       ])
