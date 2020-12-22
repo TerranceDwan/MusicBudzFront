@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ResponseModalComponent } from './components/response-modal/response-modal.component';
+import { FeedComponent } from './components/feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ResponseModalComponent } from './components/response-modal/response-mod
     HeaderComponent,
     FooterComponent,
     ProfileComponent,
-    ResponseModalComponent
+    ResponseModalComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
